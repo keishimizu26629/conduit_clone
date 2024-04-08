@@ -1,0 +1,49 @@
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+/Users/keisukeshimizu/.rbenv/versions/3.2.3/bin/ruby extconf.rb
+checking for __builtin_clz()... yes
+checking for __builtin_clzl()... yes
+checking for __builtin_clzll()... yes
+checking for float.h... yes
+checking for math.h... yes
+checking for stdbool.h... yes
+checking for stdlib.h... yes
+checking for x86intrin.h... no
+checking for _lzcnt_u32() in x86intrin.h... no
+checking for _lzcnt_u64() in x86intrin.h... no
+checking for intrin.h... no
+checking for __lzcnt() in intrin.h... no
+checking for __lzcnt64() in intrin.h... no
+checking for _BitScanReverse() in intrin.h... no
+checking for _BitScanReverse64() in intrin.h... no
+checking for labs() in stdlib.h... yes
+checking for llabs() in stdlib.h... yes
+checking for finite() in math.h... no
+checking for isfinite() in math.h... no
+checking for ruby/atomic.h... yes
+checking for ruby/internal/has/builtin.h... yes
+checking for ruby/internal/static_assert.h... yes
+checking for rb_rational_num() in ruby.h... yes
+checking for rb_rational_den() in ruby.h... yes
+checking for rb_complex_real() in ruby.h... yes
+checking for rb_complex_imag() in ruby.h... yes
+checking for rb_opts_exception_p() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
+creating Makefile
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-4ue0gu sitelibdir\=./.gem.20240406-98611-4ue0gu clean
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-4ue0gu sitelibdir\=./.gem.20240406-98611-4ue0gu
+compiling bigdecimal.c
+compiling missing.c
+linking shared-object bigdecimal.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-4ue0gu sitelibdir\=./.gem.20240406-98611-4ue0gu install
+/usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20240406-98611-4ue0gu
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.7/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-4ue0gu sitelibdir\=./.gem.20240406-98611-4ue0gu clean

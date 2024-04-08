@@ -1,0 +1,19 @@
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/Users/keisukeshimizu/.rbenv/versions/3.2.3/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-vofj2v sitelibdir\=./.gem.20240406-98611-vofj2v clean
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-vofj2v sitelibdir\=./.gem.20240406-98611-vofj2v
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-vofj2v sitelibdir\=./.gem.20240406-98611-vofj2v install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20240406-98611-vofj2v
+
+current directory: /Users/keisukeshimizu/Development/Ruby/conduit_clone/vendor/bundle/ruby/3.2.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240406-98611-vofj2v sitelibdir\=./.gem.20240406-98611-vofj2v clean
