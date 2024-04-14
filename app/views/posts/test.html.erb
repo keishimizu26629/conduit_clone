@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render 'layouts/head' %>
+</head>
+<body>
+<div class="editor-page">
+  <div class="container page">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-xs-12">
+        <%= form_with(model: @post, local: true) do |form| %>
+          <fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :title, class: "form-control form-control-lg", placeholder: "Article Title" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_field :summary, class: "form-control", placeholder: "What's this article about?" %>
+            </fieldset>
+            <fieldset class="form-group">
+              <%= form.text_area :body, class: "form-control", rows: 8, placeholder: "Write your article (in markdown)" %>
+            </fieldset>
+            <%= form_with(model: @post, local: true) do |form| %>
+            <fieldset class="form-group">
+              <%= form.text_field :tag_list, class: 'form-control', placeholder: "Enter tags" %>
+              <div class="tag-list">
+                <% @categories.each do |category| %>
+                  <span class="tag-default tag-pill" data-category="<%= category.name %>"><i class="ion-close-round"></i> <%= category.name %></span>
+                <% end %>
+              </div>
+            </fieldset>
+            <%= form.submit "Publish Article", class: "btn btn-lg pull-xs-right btn-primary" %>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

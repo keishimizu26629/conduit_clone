@@ -6,24 +6,31 @@
 </html>
 
 <div class="article-page">
+  <%= render 'layouts/navbar' %>
   <div class="banner">
     <div class="container">
-      <h1>How to build webapps that scale</h1>
+      <h1>
+        <%= @post.title %>
+      </h1>
 
       <div class="article-meta">
         <a href="/profile/eric-simons"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
         <div class="info">
-          <a href="/profile/eric-simons" class="author">Eric Simons</a>
+          <a href="/profile/eric-simons" class="author">
+            <%= @user.name %>
+          </a>
           <span class="date">January 20th</span>
         </div>
         <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-plus-round"></i>
-          &nbsp; Follow Eric Simons <span class="counter">(10)</span>
+          ＋ Follow <%= @user.name %>
         </button>
-        &nbsp;&nbsp;
         <button class="btn btn-sm btn-outline-primary">
           <i class="ion-heart"></i>
-          &nbsp; Favorite Post <span class="counter">(29)</span>
+          ♥ Favorite Post
+          <span class="counter">
+            (<%= @post.likes %>)
+          </span>
         </button>
         <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-edit"></i> Edit Article
@@ -39,14 +46,13 @@
     <div class="row article-content">
       <div class="col-md-12">
         <p>
-          Web development technologies have evolved at an incredible clip over the past few years.
+          <%= @post.content %>
         </p>
-        <h2 id="introducing-ionic">Introducing RealWorld.</h2>
-        <p>It's a great solution for learning how other frameworks work.</p>
-        <ul class="tag-list">
-          <li class="tag-default tag-pill tag-outline">realworld</li>
-          <li class="tag-default tag-pill tag-outline">implementations</li>
-        </ul>
+        <div class="tag-list">
+          <% @categories.each do |category| %>
+            <span class="tag-default tag-pill" data-category="<%= category.name %>"><i class="ion-close-round"></i> <%= category.name %></span>
+          <% end %>
+        </div>
       </div>
     </div>
 
@@ -90,40 +96,25 @@
           </div>
         </form>
 
-        <div class="card">
-          <div class="card-block">
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional content.
-            </p>
+        <% @comments.each do |comment| %>
+          <div class="card mb-3">
+            <div class="card-block">
+              <p class="card-text"><%= comment.content %></p>
+            </div>
+            <div class="card-footer">
+              <!-- コメントしたユーザーのプロフィールへのリンク -->
+              <a href="/profile/<%= comment.user.username %>" class="comment-author">
+                <!-- ユーザー画像、存在しない場合はデフォルト画像を使用 -->
+                <% img_url = comment.user.image.presence || "http://i.imgur.com/Qr71crq.jpg" %>
+                <img src="<%= img_url %>" class="comment-author-img" />
+              </a>
+              &nbsp;
+              <a href="/profile/<%= comment.user.username %>" class="comment-author"><%= comment.user.name %></a>
+              <!-- コメントの日付の表示、日付は適切にフォーマットする -->
+              <span class="date-posted"><%= comment.created_at.strftime("%b %d, %Y") %></span>
+            </div>
           </div>
-          <div class="card-footer">
-            <a href="/profile/author" class="comment-author">
-              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            </a>
-            &nbsp;
-            <a href="/profile/jacob-schmidt" class="comment-author">Jacob Schmidt</a>
-            <span class="date-posted">Dec 29th</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-block">
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional content.
-            </p>
-          </div>
-          <div class="card-footer">
-            <a href="/profile/author" class="comment-author">
-              <img src="http://i.imgur.com/Qr71crq.jpg" class="comment-author-img" />
-            </a>
-            &nbsp;
-            <a href="/profile/jacob-schmidt" class="comment-author">Jacob Schmidt</a>
-            <span class="date-posted">Dec 29th</span>
-            <span class="mod-options">
-              <i class="ion-trash-a"></i>
-            </span>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
