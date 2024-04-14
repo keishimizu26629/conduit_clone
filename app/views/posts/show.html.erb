@@ -32,9 +32,11 @@
             (<%= @post.likes %>)
           </span>
         </button>
-        <button class="btn btn-sm btn-outline-secondary">
+        <%= link_to edit_post_path(@post), class: "btn btn-sm btn-outline-secondary" do %>
           <i class="ion-edit"></i> Edit Article
-        </button>
+        <% end %>
+
+
         <button class="btn btn-sm btn-outline-danger">
           <i class="ion-trash-a"></i> Delete Article
         </button>
