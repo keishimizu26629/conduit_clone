@@ -40,7 +40,7 @@
                 <i class="ion-heart"></i> <%= post.likes %>
               </button>
             </div>
-            <%= link_to post.title, post_path(post), class: "preview-link" %>
+            <%= link_to post_path(post), class: "preview-link" do %>
               <h1><%= post.title %></h1>
               <p><%= post.description %></p>
               <span>Read more...</span>
@@ -49,7 +49,8 @@
                   <li class="tag-default tag-pill tag-outline"><%= category.name %></li>
                 <% end %>
               </ul>
-            </a>
+            <% end %>
+
           </div>
         <% end %>
 

@@ -19,7 +19,9 @@
           <a href="/profile/eric-simons" class="author">
             <%= @user.name %>
           </a>
-          <span class="date">January 20th</span>
+          <span class="date">
+            <%= @post.created_at %>
+          </span>
         </div>
         <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-plus-round"></i>
@@ -70,12 +72,14 @@
 
         <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-plus-round"></i>
-          &nbsp; Follow Eric Simons
+          ＋ Follow <%= @user.name %>
         </button>
-        &nbsp;
         <button class="btn btn-sm btn-outline-primary">
           <i class="ion-heart"></i>
-          &nbsp; Favorite Article <span class="counter">(29)</span>
+          ♥ Favorite Post
+          <span class="counter">
+            (<%= @post.likes %>)
+          </span>
         </button>
         <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-edit"></i> Edit Article

@@ -15,7 +15,7 @@ bundle install
 ```
 
 ```
-bundle exec rails new . --force --skip-bundle
+bundle exec rails new . --force
 ```
 
 ```
